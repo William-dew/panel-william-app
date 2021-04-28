@@ -1,0 +1,35 @@
+<template>
+  <div>
+    <input
+      type="number"
+      placeholder="dimension X"
+      v-model.number="x"
+      v-on:input="update"
+    />
+    <input
+      type="number"
+      placeholder="dimension Y"
+      v-model.number="y"
+      v-on:input="update"
+    />
+  </div>
+</template>
+
+<script>
+import store from "../../store";
+export default {
+  name: "FormInputDimension",
+  data: () => ({
+    x: "",
+    y: "",
+  }),
+
+  methods: {
+    update() {
+      store.commit("setDimensionCircuit", { x: this.x, y: this.y });
+    },
+  },
+};
+</script>
+<style>
+</style>
