@@ -12,6 +12,7 @@
 
 <script>
 import store from "../../store";
+import { mix } from "../numberPose";
 
 export default {
   data: () => ({
@@ -20,7 +21,7 @@ export default {
   methods: {
     update() {
       store.commit("setBordPanneau", this.x);
-      console.log(store.state.input);
+      mix();
     },
   },
 };

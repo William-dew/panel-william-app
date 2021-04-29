@@ -17,6 +17,7 @@
 
 <script>
 import store from "../../store";
+import { mix } from "../numberPose";
 
 export default {
   name: "FormInputDimensionPanneau",
@@ -27,6 +28,7 @@ export default {
   methods: {
     update() {
       store.commit("setDimensionPanneau", { x: this.x, y: this.y });
+      mix();
     },
   },
 };

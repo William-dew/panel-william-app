@@ -82,14 +82,12 @@ const store = new Vuex.Store({
         },
         setEntraxe(state, data) {
             state.input.entraxe = data;
+        },
+        setResultat(state, data) {
+            state.resultatMix = data;
         }
     },
 
-    actions: {
-        setBordPanneau(context) {
-            context.commit('setDimensionPanneau');
-        }
-    }
 })
 
 export default store;

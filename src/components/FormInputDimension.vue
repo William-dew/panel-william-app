@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="FormInputDimension">
     <input
       type="number"
       placeholder="dimension X"
@@ -17,6 +17,7 @@
 
 <script>
 import store from "../../store";
+import { mix } from "../numberPose";
 export default {
   name: "FormInputDimension",
   data: () => ({
@@ -27,9 +28,15 @@ export default {
   methods: {
     update() {
       store.commit("setDimensionCircuit", { x: this.x, y: this.y });
+      mix();
     },
   },
 };
 </script>
-<style>
+<style lang='scss'>
+.FormInputDimension {
+  background-color: aliceblue;
+  display: inline;
+  margin: 1rem;
+}
 </style>
