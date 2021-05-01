@@ -1,37 +1,36 @@
 <template>
-  <div class="entraxe">
+  <div class="edge">
     <v-text-field
       type="number"
-      placeholder="Entraxe"
       v-model.number="x"
       v-on:input="update"
+      label="Bord Panneau/Circuit"
       min="0"
     ></v-text-field>
   </div>
 </template>
 
 <script>
-import store from "../../store";
-import { eventBus } from "../main";
-import { mix } from "../numberPose";
+import store from "../../../store";
+import { mix } from "../../numberPose";
+import { eventBus } from "../../main";
 
 export default {
-  name: "FormInputDimension",
   data: () => ({
-    x: "",
+    x: 15,
   }),
-
   methods: {
     update() {
-      store.commit("setEntraxe", this.x);
+      store.commit("setBordPanneau", this.x);
       mix();
       eventBus.$emit("draw");
     },
   },
 };
 </script>
+
 <style lang='scss'>
-.entraxe {
+.edge {
   padding: 1rem;
 }
 </style>

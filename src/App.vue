@@ -1,28 +1,8 @@
 <template>
   <v-app>
-    <v-app-bar app color="secondary">
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-app-bar app color="primary lighten-1">
+      <div class="d-flex align-center"></div>
       <v-spacer></v-spacer>
-
       <v-btn
         href="https://github.com/William-dew/panel-william-app"
         target="_blank"
@@ -33,24 +13,41 @@
       </v-btn>
     </v-app-bar>
 
-    <v-main>
-      <form-input-dimension />
-      <form-input-dimension-panneau />
-      <form-input-dimension-bord />
-      <form-entraxe />
-      <resultat />
-      <Canvas />
+    <v-main class="principal">
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4" class="input">
+            <form-input-dimension-panneau />
+            <form-input-dimension />
+            <entraxe-edge />
+            <v-row>
+              <quantity-pcb />
+              <casse />
+            </v-row>
+          </v-col>
+          <v-col cols="12" md="4"><resultat /></v-col>
+          <v-col cols="12" md="4"><Canvas /></v-col>
+        </v-row>
+      </v-container>
     </v-main>
+    <v-footer color="primary lighten-1" padless>
+      <v-row justify="center" no-gutters>
+        <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+          {{ new Date().getFullYear() }} — <strong>William-App</strong>
+        </v-col>
+      </v-row></v-footer
+    >
   </v-app>
 </template>
 
 <script>
 import Canvas from "./components/Canvas.vue";
-import FormEntraxe from "./components/FormEntraxe.vue";
 import FormInputDimension from "./components/FormInputDimension.vue";
-import FormInputDimensionBord from "./components/FormInputDimensionBord.vue";
 import FormInputDimensionPanneau from "./components/FormInputDimensionPanneau.vue";
 import Resultat from "./components/Resultat.vue";
+import EntraxeEdge from "./components/entraxe-edge.vue";
+import QuantityPcb from "./components/quantityPcb.vue";
+import Casse from "./components/Casse.vue";
 
 export default {
   name: "App",
@@ -59,9 +56,10 @@ export default {
     FormInputDimension,
     FormInputDimensionPanneau,
     Resultat,
-    FormInputDimensionBord,
-    FormEntraxe,
     Canvas,
+    EntraxeEdge,
+    QuantityPcb,
+    Casse,
   },
 
   data: () => ({
@@ -69,3 +67,10 @@ export default {
   }),
 };
 </script>
+<style lang="scss">
+.principal {
+  .input {
+    border: 2px solid green;
+  }
+}
+</style>

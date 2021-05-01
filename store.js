@@ -6,12 +6,13 @@ const store = new Vuex.Store({
         input: {
             dimCiX: '',
             dimCiY: '',
-            dimPanelX: '',
-            dimPanelY: '',
+            dimPanelX: 600,
+            dimPanelY: 500,
             entraxe: 2,
             bordPanneau: 15,
-            dimPanelUtilX: '',
-            dimPanelUtilY: '',
+            dimPanelUtilX: 570,
+            dimPanelUtilY: 470,
+            quantityPcbToDeliver: '1',
 
         },
 
@@ -19,6 +20,7 @@ const store = new Vuex.Store({
         resultatMix: {
 
         },
+
     },
 
     mutations: {
@@ -77,7 +79,11 @@ const store = new Vuex.Store({
         },
         setResultat(state, data) {
             state.resultatMix = data;
-        }
+        },
+        setQuantityPcbToDeliver(state, data) {
+            state.input.quantityPcbToDeliver = data;
+        },
+
     },
 
 })

@@ -1,18 +1,24 @@
 <template>
-  <div class="FormInputDimension">
-    <v-text-field
-      type="number"
-      v-model.number="x"
-      v-on:input="update"
-      label="Dimension circuit"
-    ></v-text-field>
-    <v-text-field
-      type="number"
-      v-model.number="y"
-      v-on:input="update"
-      label="Dimension circuit"
-    ></v-text-field>
-  </div>
+  <v-form class="FormInputDimension">
+    <v-row>
+      <v-col cols="6">
+        <v-text-field
+          type="number"
+          v-model.number="x"
+          v-on:input="update"
+          label="dimension Circuit"
+        ></v-text-field>
+      </v-col>
+      <v-col cols="6">
+        <v-text-field
+          type="number"
+          v-model.number="y"
+          v-on:input="update"
+          label="dimension Circuit"
+        ></v-text-field>
+      </v-col>
+    </v-row>
+  </v-form>
 </template>
 
 <script>
