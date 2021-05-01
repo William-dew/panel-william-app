@@ -13,6 +13,7 @@
 <script>
 import store from "../../store";
 import { mix } from "../numberPose";
+import { eventBus } from "../main";
 
 export default {
   data: () => ({
@@ -22,6 +23,7 @@ export default {
     update() {
       store.commit("setBordPanneau", this.x);
       mix();
+      eventBus.$emit("draw");
     },
   },
 };

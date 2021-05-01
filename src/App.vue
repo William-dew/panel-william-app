@@ -39,11 +39,13 @@
       <form-input-dimension-bord />
       <form-entraxe />
       <resultat />
+      <Canvas />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import Canvas from "./components/Canvas.vue";
 import FormEntraxe from "./components/FormEntraxe.vue";
 import FormInputDimension from "./components/FormInputDimension.vue";
 import FormInputDimensionBord from "./components/FormInputDimensionBord.vue";
@@ -59,6 +61,7 @@ export default {
     Resultat,
     FormInputDimensionBord,
     FormEntraxe,
+    Canvas,
   },
 
   data: () => ({

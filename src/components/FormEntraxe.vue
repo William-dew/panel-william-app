@@ -12,6 +12,9 @@
 
 <script>
 import store from "../../store";
+import { eventBus } from "../main";
+import { mix } from "../numberPose";
+
 export default {
   name: "FormInputDimension",
   data: () => ({
@@ -21,6 +24,8 @@ export default {
   methods: {
     update() {
       store.commit("setEntraxe", this.x);
+      mix();
+      eventBus.$emit("draw");
     },
   },
 };

@@ -18,6 +18,7 @@
 <script>
 import store from "../../store";
 import { mix } from "../numberPose";
+import { eventBus } from "../main";
 export default {
   name: "FormInputDimension",
   data: () => ({
@@ -29,6 +30,7 @@ export default {
     update() {
       store.commit("setDimensionCircuit", { x: this.x, y: this.y });
       mix();
+      eventBus.$emit("draw");
     },
   },
 };

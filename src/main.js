@@ -6,8 +6,8 @@ import Vuex from 'vuex';
 Vue.use(Vuex)
 
 Vue.config.productionTip = false
-
+export const eventBus = new Vue();
 new Vue({
   vuetify,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

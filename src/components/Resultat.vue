@@ -1,8 +1,12 @@
 <template>
-  <table class="resultat">
+  <table class="resultat" border>
     <tr>
       <td>Nombre de poses</td>
       <td>{{ resultat }}</td>
+    </tr>
+    <tr>
+      <td>Détail résultat</td>
+      <td>{{ completResult }}</td>
     </tr>
     <div>panneau util{{ panneauUtil }}</div>
   </table>
@@ -14,10 +18,13 @@ export default {
   name: "Resultat",
   computed: {
     resultat() {
-      return store.state.resultatMix;
+      return store.state.resultatMix.resultat;
     },
     panneauUtil() {
       return store.state.input;
+    },
+    completResult() {
+      return store.state.resultatMix;
     },
   },
 };
@@ -25,6 +32,6 @@ export default {
 
 <style lang='scss'>
 .resultat {
-  width: 300px;
+  width: 800px;
 }
 </style>

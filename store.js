@@ -17,15 +17,7 @@ const store = new Vuex.Store({
 
         resultatNoMix: {},
         resultatMix: {
-            name: '',
-            nombre_en_x: 0,
-            nombre_en_y: 0,
-            espaceRestantX: '',
-            dimension_panneau_x: '',
-            dimension_panneau_y: '',
-            nombrePoseXRotation: '',
-            nombrePoseYRotation: '',
-            resultat: '',
+
         },
     },
 

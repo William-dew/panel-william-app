@@ -35,23 +35,17 @@ const mix = function () {
         }
         // calcul dimension restante en numberInX
         const espaceRestantX = dimPanelUtilX - (numberInX * (dimCiX + entraxe));
-        let nombrePoseXRotation = Math.floor((espaceRestantX + entraxe) / (dimCiY + entraxe));
-        let nombrePoseYRotation = Math.floor((dimPanelUtilY + entraxe) / (dimCiX + entraxe));
-        if (nombrePoseYRotation === 0 || nombrePoseXRotation === 0) {
-            nombrePoseYRotation = 0;
-            nombrePoseXRotation = 0;
+        let numberInXRotation = Math.floor((espaceRestantX + entraxe) / (dimCiY + entraxe));
+        let numberInYRotation = Math.floor((dimPanelUtilY + entraxe) / (dimCiX + entraxe));
+        if (numberInYRotation === 0 || numberInXRotation === 0) {
+            numberInYRotation = 0;
+            numberInXRotation = 0;
         }
 
-        const resultat = numberInX * numberInY + nombrePoseXRotation + nombrePoseYRotation;
-        return {
-            name: 'cas1',
-            nombre_en_x: numberInX,
-            nombre_en_y: numberInY,
-            espaceRestantX,
-            nombrePoseXRotation: nombrePoseXRotation,
-            nombrePoseYRotation,
-            resultat,
-        }
+        const resultat = (numberInX * numberInY) + (numberInXRotation * numberInYRotation);
+        store.commit('setResultat', { name: 'cas1', numberInX, numberInY, numberInYRotation, numberInXRotation, resultat });
+        return resultat;
+
     }
     const cas2 = function () {
         let numberInX = Math.floor((dimPanelUtilX + entraxe) / (dimCiY + entraxe));
@@ -69,13 +63,17 @@ const mix = function () {
             numberInYRotation = 0;
             numberInXRotation = 0;
         }
-        const resultat = numberInX * numberInY + numberInXRotation * numberInYRotation;
-        store.commit('setResultat', { numberInX, numberInY, numberInYRotation, numberInXRotation, resultat });
+        const resultat = (numberInX * numberInY) + (numberInXRotation * numberInYRotation);
+        store.commit('setResultat', { name: 'cas2', numberInX, numberInY, numberInYRotation, numberInXRotation, resultat });
+        return resultat;
 
 
     }
-    cas1();
-    cas2();
+    console.log('cas1:', cas1())
+    console.log('cas2:', cas2())
+
+    return (cas1() > cas2()) ? cas1() : cas2();
 }
+
 export { noMix, mix };
 
