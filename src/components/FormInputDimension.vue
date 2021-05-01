@@ -1,17 +1,17 @@
 <template>
   <div class="FormInputDimension">
-    <input
+    <v-text-field
       type="number"
-      placeholder="dimension X"
       v-model.number="x"
       v-on:input="update"
-    />
-    <input
+      label="Dimension circuit"
+    ></v-text-field>
+    <v-text-field
       type="number"
-      placeholder="dimension Y"
       v-model.number="y"
       v-on:input="update"
-    />
+      label="Dimension circuit"
+    ></v-text-field>
   </div>
 </template>
 
@@ -37,8 +37,6 @@ export default {
 </script>
 <style lang='scss'>
 .FormInputDimension {
-  background-color: aliceblue;
-  display: inline;
-  margin: 1rem;
+  padding: 1rem;
 }
 </style>

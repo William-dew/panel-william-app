@@ -16,13 +16,26 @@ export default {
   name: "Canvas",
   methods: {
     draw() {
-      this.vueCanvas.clearRect(0, 0, 600, 600);
-
       let scale = 2;
+      let origin = store.state.input.bordPanneau / scale;
+      this.vueCanvas.clearRect(0, 0, 600, 600);
+      this.vueCanvas.strokeRect(
+        0,
+        0,
+        store.state.input.dimPanelX / scale,
+        store.state.input.dimPanelY / scale
+      );
+      this.vueCanvas.strokeRect(
+        origin,
+        origin,
+        store.state.input.dimPanelUtilX / scale,
+        store.state.input.dimPanelUtilY / scale
+      );
+
       if (store.state.resultatMix.name == "cas1") {
         console.log("cas1");
-        let x = 0,
-          y = 0;
+        let x = origin,
+          y = origin;
         for (let i = 0; i < store.state.resultatMix.numberInY; i++) {
           for (let j = 0; j < store.state.resultatMix.numberInX; j++) {
             this.vueCanvas.fillRect(
@@ -31,11 +44,10 @@ export default {
               store.state.input.dimCiX / scale,
               store.state.input.dimCiY / scale
             );
-            console.log("je suis dans une boucle");
 
             x += (store.state.input.entraxe + store.state.input.dimCiX) / scale;
           }
-          x = 0;
+          x = origin;
           this.vueCanvas.fillRect(
             x,
             y,
@@ -51,12 +63,12 @@ export default {
           return;
         }
         // affichage avec rotation
-        console.log("je suis dans la boucle des rotations");
-        y = 0;
+        y = origin;
         x =
+          origin +
           (store.state.input.dimCiX * store.state.resultatMix.numberInX +
             store.state.input.entraxe * store.state.resultatMix.numberInX) /
-          scale;
+            scale;
         for (let i = 0; i < store.state.resultatMix.numberInYRotation; i++) {
           for (let j = 0; j < store.state.resultatMix.numberInXRotation; j++) {
             this.vueCanvas.fillRect(
@@ -68,9 +80,10 @@ export default {
             x += (store.state.input.entraxe + store.state.input.dimCiY) / scale;
           }
           x =
+            origin +
             (store.state.input.dimCiX * store.state.resultatMix.numberInX +
               store.state.input.entraxe * store.state.resultatMix.numberInX) /
-            scale;
+              scale;
 
           this.vueCanvas.fillRect(
             x,
@@ -82,9 +95,8 @@ export default {
         }
       }
       if (store.state.resultatMix.name == "cas2") {
-        console.log("cas1");
-        let x = 0,
-          y = 0;
+        let x = origin,
+          y = origin;
         for (let i = 0; i < store.state.resultatMix.numberInY; i++) {
           for (let j = 0; j < store.state.resultatMix.numberInX; j++) {
             this.vueCanvas.fillRect(
@@ -93,11 +105,10 @@ export default {
               store.state.input.dimCiY / scale,
               store.state.input.dimCiX / scale
             );
-            console.log("je suis dans une boucle");
 
             x += (store.state.input.entraxe + store.state.input.dimCiY) / scale;
           }
-          x = 0;
+          x = origin;
           this.vueCanvas.fillRect(
             x,
             y,
@@ -113,12 +124,12 @@ export default {
           return;
         }
         // affichage avec rotation
-        console.log("je suis dans la boucle des rotations");
-        y = 0;
+        y = origin;
         x =
+          origin +
           (store.state.input.dimCiY * store.state.resultatMix.numberInX +
             store.state.input.entraxe * store.state.resultatMix.numberInX) /
-          scale;
+            scale;
         for (let i = 0; i < store.state.resultatMix.numberInYRotation; i++) {
           for (let j = 0; j < store.state.resultatMix.numberInXRotation; j++) {
             this.vueCanvas.fillRect(
@@ -130,9 +141,10 @@ export default {
             x += (store.state.input.entraxe + store.state.input.dimCiX) / scale;
           }
           x =
+            origin +
             (store.state.input.dimCiY * store.state.resultatMix.numberInX +
               store.state.input.entraxe * store.state.resultatMix.numberInX) /
-            scale;
+              scale;
 
           this.vueCanvas.fillRect(
             x,

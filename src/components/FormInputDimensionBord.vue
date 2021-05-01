@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <input
+  <div class="edge">
+    <v-text-field
       type="number"
       v-model.number="x"
       v-on:input="update"
-      placeholder="bord panneau"
-      min="0"
-    />
+      label="Bord Panneau/Circuit"
+    ></v-text-field>
   </div>
 </template>
 
@@ -29,5 +28,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss'>
+.edge {
+  padding: 1rem;
+}
 </style>

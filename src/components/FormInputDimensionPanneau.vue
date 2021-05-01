@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="edge">
     <input
       type="number"
       placeholder="dimension P X"
@@ -36,4 +36,7 @@ export default {
 };
 </script>
 <style>
+.edge {
+  padding: 1rem;
+}
 </style>

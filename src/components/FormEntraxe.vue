@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <input
+  <div class="entraxe">
+    <v-text-field
       type="number"
       placeholder="Entraxe"
       v-model.number="x"
       v-on:input="update"
       min="0"
-    />
+    ></v-text-field>
   </div>
 </template>
 
@@ -30,5 +30,8 @@ export default {
   },
 };
 </script>
-<style>
+<style lang='scss'>
+.entraxe {
+  padding: 1rem;
+}
 </style>
