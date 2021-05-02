@@ -155,6 +155,7 @@ export default {
           y += (store.state.input.entraxe + store.state.input.dimCiY) / scale;
         }
       }
+      console.log(window.innerWidth);
     },
   },
 

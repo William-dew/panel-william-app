@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <v-app-bar app color="primary lighten-1">
-      <div class="d-flex align-center"></div>
+      <div class="d-flex align-center">
+        <v-toolbar-title>Panellisation</v-toolbar-title>
+      </div>
       <v-spacer></v-spacer>
       <v-btn
         href="https://github.com/William-dew/panel-william-app"
@@ -15,7 +17,7 @@
 
     <v-main class="principal">
       <v-row>
-        <v-col cols="12" md="4" lg="3" class="input">
+        <v-col cols="12" md="6" lg="3" class="input">
           <v-card elevation="10">
             <form-input-dimension-panneau />
             <form-input-dimension />
@@ -26,10 +28,10 @@
             <bareme />
           </v-card>
         </v-col>
-        <v-col cols="12" md="2" lg="2"
+        <v-col cols="12" md="6" lg="2"
           ><v-card elevation="10"><resultat /></v-card
         ></v-col>
-        <v-col cols="12" md="6" lg="7">
+        <v-col md="12" lg="7">
           <v-card elevation="10" id="cardcanvas">
             <Canvas />
             <SwitchMix id="switch-mix" /> </v-card
@@ -57,6 +59,8 @@ import FormEntraxe from "./components/FormEntraxe.vue";
 import FormInputDimensionBord from "./components/FormInputDimensionBord.vue";
 import Bareme from "./components/Bareme.vue";
 import SwitchMix from "./components/SwitchMix.vue";
+import { eventBus } from "./main";
+import { mix } from "./numberPose";
 
 export default {
   name: "App",
@@ -72,6 +76,10 @@ export default {
     FormInputDimensionBord,
     Bareme,
     SwitchMix,
+  },
+  mounted() {
+    eventBus.$emit("draw");
+    mix();
   },
 
   data: () => ({
@@ -92,6 +100,5 @@ export default {
   left: 600px;
 }
 #cardcanvas {
-  min-width: 900px;
 }
 </style>
