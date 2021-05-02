@@ -13,12 +13,13 @@ const store = new Vuex.Store({
             dimPanelUtilX: 570,
             dimPanelUtilY: 470,
             quantityPcbToDeliver: '1',
+            casse: '15',
+            bareme: 0,
+            mix: true,
 
         },
-
         resultatNoMix: {},
         resultatMix: {
-
         },
 
     },
@@ -44,14 +45,11 @@ const store = new Vuex.Store({
         },
         setDimensionCircuit(state, data) {
             if (data.x < data.y) {
-                console.log('x est plus petit que y');
                 state.input.dimCiX = data.y;
                 state.input.dimCiY = data.x;
             } else {
                 state.input.dimCiX = data.x;
                 state.input.dimCiY = data.y;
-
-                console.log('x est plus grans que Y');
             }
         },
         setDimensionPanneau(state, data) {
@@ -83,6 +81,15 @@ const store = new Vuex.Store({
         setQuantityPcbToDeliver(state, data) {
             state.input.quantityPcbToDeliver = data;
         },
+        setCasse(state, data) {
+            state.input.casse = data;
+        },
+        setBareme(state, data) {
+            state.input.bareme = data;
+        },
+        setMix(state, data) {
+            state.input.mix = data;
+        }
 
     },
 

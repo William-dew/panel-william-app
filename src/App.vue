@@ -14,21 +14,27 @@
     </v-app-bar>
 
     <v-main class="principal">
-      <v-container>
-        <v-row>
-          <v-col cols="12" md="4" class="input">
+      <v-row>
+        <v-col cols="12" md="4" lg="3" class="input">
+          <v-card elevation="10">
             <form-input-dimension-panneau />
             <form-input-dimension />
-            <entraxe-edge />
-            <v-row>
-              <quantity-pcb />
-              <casse />
-            </v-row>
-          </v-col>
-          <v-col cols="12" md="4"><resultat /></v-col>
-          <v-col cols="12" md="4"><Canvas /></v-col>
-        </v-row>
-      </v-container>
+            <form-entraxe />
+            <form-input-dimension-bord />
+            <quantity-pcb />
+            <casse />
+            <bareme />
+          </v-card>
+        </v-col>
+        <v-col cols="12" md="2" lg="2"
+          ><v-card elevation="10"><resultat /></v-card
+        ></v-col>
+        <v-col cols="12" md="6" lg="7">
+          <v-card elevation="10" id="cardcanvas">
+            <Canvas />
+            <SwitchMix id="switch-mix" /> </v-card
+        ></v-col>
+      </v-row>
     </v-main>
     <v-footer color="primary lighten-1" padless>
       <v-row justify="center" no-gutters>
@@ -45,9 +51,12 @@ import Canvas from "./components/Canvas.vue";
 import FormInputDimension from "./components/FormInputDimension.vue";
 import FormInputDimensionPanneau from "./components/FormInputDimensionPanneau.vue";
 import Resultat from "./components/Resultat.vue";
-import EntraxeEdge from "./components/entraxe-edge.vue";
 import QuantityPcb from "./components/quantityPcb.vue";
 import Casse from "./components/Casse.vue";
+import FormEntraxe from "./components/FormEntraxe.vue";
+import FormInputDimensionBord from "./components/FormInputDimensionBord.vue";
+import Bareme from "./components/Bareme.vue";
+import SwitchMix from "./components/SwitchMix.vue";
 
 export default {
   name: "App",
@@ -57,9 +66,12 @@ export default {
     FormInputDimensionPanneau,
     Resultat,
     Canvas,
-    EntraxeEdge,
     QuantityPcb,
     Casse,
+    FormEntraxe,
+    FormInputDimensionBord,
+    Bareme,
+    SwitchMix,
   },
 
   data: () => ({
@@ -69,8 +81,17 @@ export default {
 </script>
 <style lang="scss">
 .principal {
-  .input {
-    border: 2px solid green;
-  }
+  margin: 6vh 50px;
+}
+.input > * {
+  padding: 1rem;
+}
+#switch-mix {
+  position: absolute;
+  top: 0;
+  left: 600px;
+}
+#cardcanvas {
+  min-width: 900px;
 }
 </style>

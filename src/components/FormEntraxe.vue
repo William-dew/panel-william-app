@@ -1,36 +1,36 @@
 <template>
-  <div class="edge">
+  <div class="entraxe">
     <v-text-field
       type="number"
       v-model.number="x"
       v-on:input="update"
-      label="Bord Panneau/Circuit"
       min="0"
+      label="Entre poses"
     ></v-text-field>
   </div>
 </template>
 
 <script>
-import store from "../../../store";
-import { mix } from "../../numberPose";
-import { eventBus } from "../../main";
+import store from "../../store";
+import { eventBus } from "../main";
+import { mix } from "../numberPose";
 
 export default {
+  name: "FormEntraxe",
   data: () => ({
-    x: 15,
+    x: "2",
   }),
+
   methods: {
     update() {
-      store.commit("setBordPanneau", this.x);
+      store.commit("setEntraxe", this.x);
       mix();
       eventBus.$emit("draw");
     },
   },
 };
 </script>
-
 <style lang='scss'>
-.edge {
-  padding: 1rem;
+.entraxe {
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div class="casse">
+  <div class="bareme">
     <v-text-field
       type="number"
       v-model.number="x"
       v-on:input="update"
       min="0"
-      label="% Casse"
+      label="€ Barème"
     ></v-text-field>
   </div>
 </template>
@@ -13,17 +13,17 @@
 <script>
 import store from "../../store";
 export default {
-  name: "casse",
-  data: () => ({ x: 15 }),
+  name: "bareme",
+  data: () => ({ x: 0 }),
   methods: {
     update() {
-      store.commit("setCasse", this.x);
+      store.commit("setBareme", this.x);
     },
   },
 };
 </script>
 
 <style>
-.casse {
+.bareme {
 }
 </style>

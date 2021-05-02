@@ -2,8 +2,8 @@
   <canvas
     class="canvas"
     id="c"
-    width="400"
-    height="400"
+    width="650"
+    height="600"
     v-on:click="draw"
   ></canvas>
 </template>
@@ -16,9 +16,9 @@ export default {
   name: "Canvas",
   methods: {
     draw() {
-      let scale = 2;
+      let scale = 1.2;
       let origin = store.state.input.bordPanneau / scale;
-      this.vueCanvas.clearRect(0, 0, 600, 600);
+      this.vueCanvas.clearRect(0, 0, 800, 800);
       this.vueCanvas.strokeRect(
         0,
         0,
@@ -175,6 +175,6 @@ export default {
 
 <style lang="scss">
 .canvas {
-  border: 2px solid red;
+  padding: 1rem;
 }
 </style>

@@ -43,6 +43,5 @@ export default {
 </script>
 <style lang='scss'>
 .FormInputDimension {
-  padding: 1rem;
 }
 </style>
