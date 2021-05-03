@@ -18,7 +18,6 @@ const store = new Vuex.Store({
             mix: true,
 
         },
-        resultatNoMix: {},
         resultatMix: {
         },
 
@@ -70,7 +69,6 @@ const store = new Vuex.Store({
             } else {
                 state.input.dimPanelUtilY = state.input.dimPanelY - 2 * (state.input.bordPanneau);
             }
-
         },
         setEntraxe(state, data) {
             state.input.entraxe = data;
@@ -92,7 +90,6 @@ const store = new Vuex.Store({
         }
 
     },
-
 })
 
 export default store;

@@ -78,13 +78,12 @@ export default {
 
 <style lang='scss'>
 #resultat {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.7);
   padding: 1rem;
   td:not(.bar) {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
   }
-
   tr {
     height: 3rem;
   }

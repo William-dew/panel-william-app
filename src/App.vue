@@ -14,7 +14,6 @@
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
-
     <v-main class="principal">
       <v-row>
         <v-col cols="12" md="6" lg="3" class="input">
@@ -41,7 +40,7 @@
     <v-footer color="primary lighten-1" padless>
       <v-row justify="center" no-gutters>
         <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
-          {{ new Date().getFullYear() }} — <strong>William-App</strong>
+          {{ new Date().getFullYear() }} — <strong>William-dew</strong>
         </v-col>
       </v-row></v-footer
     >
@@ -64,7 +63,6 @@ import { mix } from "./numberPose";
 
 export default {
   name: "App",
-
   components: {
     FormInputDimension,
     FormInputDimensionPanneau,
@@ -81,10 +79,6 @@ export default {
     eventBus.$emit("draw");
     mix();
   },
-
-  data: () => ({
-    //
-  }),
 };
 </script>
 <style lang="scss">
@@ -98,7 +92,5 @@ export default {
   position: absolute;
   top: 0;
   left: 600px;
-}
-#cardcanvas {
 }
 </style>

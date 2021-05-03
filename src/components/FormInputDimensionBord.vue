@@ -9,7 +9,6 @@
     ></v-text-field>
   </div>
 </template>
-
 <script>
 import store from "../../store";
 import { mix } from "../numberPose";
@@ -28,8 +27,3 @@ export default {
   },
 };
 </script>
-
-<style lang='scss'>
-.edge {
-}
-</style>

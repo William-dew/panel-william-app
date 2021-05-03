@@ -10,7 +10,6 @@ const mix = function () {
             numberInX = 0;
             numberInY = 0;
         }
-        console.log(store.state.input.mix);
 
         // calcul dimension restante en numberInX
         const espaceRestantX = dimPanelUtilX - (numberInX * (dimCiX + entraxe));
@@ -57,9 +56,6 @@ const mix = function () {
 
 
     }
-    console.log('cas1:', cas1())
-    console.log('cas2:', cas2())
-
     return (cas1() > cas2()) ? cas1() : cas2();
 }
 

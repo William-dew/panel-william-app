@@ -169,11 +169,10 @@ export default {
     var c = document.getElementById("c");
     var ctx = c.getContext("2d");
     this.vueCanvas = ctx;
-    this.vueCanvas.fillStyle = "rgb(100,0,0)";
+    this.vueCanvas.fillStyle = "#b36700";
   },
 };
 </script>
-
 <style lang="scss">
 .canvas {
   padding: 1rem;

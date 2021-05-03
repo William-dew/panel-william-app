@@ -9,7 +9,6 @@
     ></v-text-field>
   </div>
 </template>
-
 <script>
 import store from "../../store";
 export default {
@@ -22,8 +21,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.bareme {
-}
-</style>
