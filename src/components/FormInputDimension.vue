@@ -6,7 +6,7 @@
           type="number"
           v-model.number="x"
           v-on:input="update"
-          label="dimension Circuit"
+          label="dim. Circuit"
         ></v-text-field>
       </v-col>
       <v-col cols="6">
@@ -14,7 +14,7 @@
           type="number"
           v-model.number="y"
           v-on:input="update"
-          label="dimension Circuit"
+          label="dim. Circuit"
         ></v-text-field>
       </v-col>
     </v-row>

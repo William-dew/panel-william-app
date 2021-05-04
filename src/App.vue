@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="primary lighten-1">
       <div class="d-flex align-center">
-        <v-toolbar-title>Panellisation</v-toolbar-title>
+        <v-toolbar-title>Pannellisation</v-toolbar-title>
       </div>
       <v-spacer></v-spacer>
       <v-btn
@@ -27,10 +27,10 @@
             <bareme />
           </v-card>
         </v-col>
-        <v-col cols="12" md="6" lg="2"
+        <v-col cols="12" md="6" lg="3"
           ><v-card elevation="10"><resultat /></v-card
         ></v-col>
-        <v-col md="12" lg="7">
+        <v-col md="12" lg="6">
           <v-card elevation="10" id="cardcanvas">
             <Canvas />
             <SwitchMix id="switch-mix" /> </v-card
@@ -91,6 +91,6 @@ export default {
 #switch-mix {
   position: absolute;
   top: 0;
-  left: 600px;
+  left: 570px;
 }
 </style>
