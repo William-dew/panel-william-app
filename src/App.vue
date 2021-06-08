@@ -28,8 +28,9 @@
           </v-card>
         </v-col>
         <v-col cols="12" md="6" lg="2"
-          ><v-card elevation="10"><resultat /></v-card
-        ></v-col>
+          ><v-card elevation="10"><resultat /></v-card>
+            <v-card elevation="10"><DisplayBareme /></v-card>
+        </v-col>
         <v-col md="12" lg="7">
           <v-card elevation="10" id="cardcanvas">
             <Canvas />
@@ -60,6 +61,7 @@ import Bareme from "./components/Bareme.vue";
 import SwitchMix from "./components/SwitchMix.vue";
 import { eventBus } from "./main";
 import { mix } from "./numberPose";
+import DisplayBareme from "./components/DisplayBareme";
 
 export default {
   name: "App",
@@ -74,6 +76,7 @@ export default {
     FormInputDimensionBord,
     Bareme,
     SwitchMix,
+    DisplayBareme
   },
   mounted() {
     eventBus.$emit("draw");
