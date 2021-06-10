@@ -9,7 +9,7 @@
       type="number"
       v-model="quantity"
       label="Quantité panneau"
-      min="0"
+      min="1"
       max="6"
     ></v-text-field>
 
